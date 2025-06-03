@@ -51,15 +51,16 @@
 
 
 // close when click off of container
-$(document).on('click touchstart', function (e){
+$(document).ready(function () {
+    $('#menu-btn').on('click', function () {
+        var x = document.getElementById("navigation");
+        x.className = (x.className === "top-menu") ? "top-menu menu-bar" : "top-menu";
+    });
 
-  var x = document.getElementById("navigation");
-  if (x.className === "top-menu") {
-    x.className += " menu-bar";
-  } else {
-    x.className = "top-menu";
-  }
-
+    $('#close-btn').on('click', function () {
+        var x = document.getElementById("navigation");
+        x.className = "top-menu";
+    });
 });
 
 const tabs = document.querySelectorAll('[data-tab-target]')
