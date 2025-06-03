@@ -348,4 +348,71 @@ template {
 
 [hidden] {
   display: none;
-}
+} 
+
+/* Custom styles
+   ========================================================================== */
+
+   body {
+            font-size: 24px;
+        }
+
+        .clients-item .iconify {
+          font-size: 5em;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 0.5em; /* Tamanho relativo ao tamanho da fonte */
+            height: 4em; /* Altura do cursor */
+            background-color: white; /* Cor do cursor */
+            animation: blink 1s step-end infinite; /* Animação de piscar */
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0; /* O cursor fica invisível na metade do tempo */
+            }
+        }
+
+        /* Ajustes para dispositivos móveis */
+        @media (max-width: 600px) {
+            .cursor {
+                width: 0.3em;
+                height: 2.2em; /* Aumenta a altura do cursor em dispositivos móveis */
+            }
+
+            .clients-item .iconify {
+              font-size: 3em;
+            }
+
+        }
+        .colored {
+            color: #61dafb; /* Cor do texto */
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltip .tooltip-text {
+            visibility: hidden;
+            width: 120px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%; /* Posição acima do elemento */
+            left: 50%;
+            margin-left: -60px; /* Centraliza o tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltip-text {
+            visibility: visible;
+            opacity: 1; /* Torna o tooltip visível */
+        }

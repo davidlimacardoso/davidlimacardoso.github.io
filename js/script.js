@@ -82,3 +82,42 @@ tabs.forEach(tab => {
 
 
 })(jQuery);
+
+const phrases = [
+            "Hello World, I’m David Cardoso ;D",
+            "Welcome to my page!",
+            "I'm a DevOps & SRE.",
+            "Let's build something great!"
+        ];
+        let currentPhraseIndex = 0;
+        let index = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentPhrase = phrases[currentPhraseIndex];
+
+            if (isDeleting) {
+                // Remove a letra
+                if (index > 0) {
+                    document.getElementById("text").innerHTML = currentPhrase.substring(0, index - 1);
+                    index--;
+                    setTimeout(type, 50); // Ajuste a velocidade de apagamento
+                } else {
+                    isDeleting = false;
+                    currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length; // Muda para a próxima frase
+                    setTimeout(type, 1000); // Pausa antes de começar a digitar
+                }
+            } else {
+                // Adiciona a letra
+                if (index < currentPhrase.length) {
+                    document.getElementById("text").innerHTML = currentPhrase.substring(0, index + 1);
+                    index++;
+                    setTimeout(type, 100); // Ajuste a velocidade de digitação
+                } else {
+                    isDeleting = true; // Começa a apagar
+                    setTimeout(type, 2000); // Pausa antes de apagar
+                }
+            }
+        }
+
+        type();
