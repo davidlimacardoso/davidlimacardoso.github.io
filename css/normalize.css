@@ -406,7 +406,7 @@ template {
             padding: 5px;
             position: absolute;
             z-index: 1;
-            bottom: 125%; /* Posição acima do elemento */
+            bottom: 75%; /* Posição acima do elemento */
             left: 50%;
             margin-left: -60px; /* Centraliza o tooltip */
             opacity: 0;
