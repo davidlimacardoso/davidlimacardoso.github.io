@@ -86,8 +86,8 @@ tabs.forEach(tab => {
 
 const phrases = [
             "Hello World, I’m David Cardoso ;D",
-            "Welcome to my page!",
-            "I'm a DevOps & SRE.",
+            "Welcome to my portfolio!",
+            "I'm a Support, DevOps & SRE.",
             "Let's build something great!"
         ];
         let currentPhraseIndex = 0;
